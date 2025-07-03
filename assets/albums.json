@@ -1,0 +1,5 @@
+[
+  { "userId": 1, "id": 1, "title": "Album One" },
+  { "userId": 1, "id": 2, "title": "Album Two" },
+  { "userId": 2, "id": 3, "title": "Album Three" }
+]

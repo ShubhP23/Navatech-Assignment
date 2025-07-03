@@ -1,0 +1,5 @@
+[
+  { "albumId": 1, "id": 1, "title": "Photo 1", "url": "", "thumbnailUrl": "" },
+  { "albumId": 1, "id": 2, "title": "Photo 2", "url": "", "thumbnailUrl": "" },
+  { "albumId": 1, "id": 3, "title": "Photo 3", "url": "", "thumbnailUrl": "" }
+]

@@ -11,6 +11,9 @@ class ApiService {
   Future<List<AlbumModel>> fetchAlbums() async {
     final response = await http.get(Uri.parse('$baseUrl/albums'));
 
+    print('Response status: ${response.statusCode}');
+    print('Response body: ${response.body.substring(0, 100)}...');
+
     if (response.statusCode == 200) {
       final List data = jsonDecode(response.body);
       // Convert each map to AlbumModel
