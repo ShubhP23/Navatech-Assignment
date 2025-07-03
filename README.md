@@ -1,16 +1,33 @@
-# navatech
+# Navatech - Flutter Assignment
 
-A new Flutter project.
+## Features Implemented
 
-## Getting Started
+- Vertically scrollable albums (infinite)
+- Each album has horizontally scrollable photos (independent and infinite)
+- Infinite scroll behavior in both directions using modular math
+- Fallback support:
+    - API → Hive cache → Local assets (JSON)
+    - Broken image URLs → `https://dummyimage.com` placeholders
+- Clean BLoC architecture
+- Local caching via Hive for offline support
 
-This project is a starting point for a Flutter application.
+## API Used
 
-A few resources to get you started if this is your first Flutter project:
+- Albums: `https://jsonplaceholder.typicode.com/albums`
+- Photos: `https://jsonplaceholder.typicode.com/photos?albumId=`
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## How It Works
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- On launch, the app attempts to load albums via API.
+- If the API fails:
+    - Falls back to local Hive cache
+    - Falls back to bundled JSON assets (`assets/albums.json`, `photos_X.json`)
+- If image fails to load from the original source, the app displays a fallback using dummyimage.com
+
+## Project Structure
+
+- `bloc/` - AlbumBloc and PhotoBloc (BLoC pattern)
+- `data/` - Remote API and local storage service
+- `models/` - Hive-backed models
+- `screens/` - Home UI with scroll logic
+- `widgets/` - Reusable UI components
